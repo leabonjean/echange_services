@@ -29,6 +29,11 @@ public class Message implements Serializable {
     private Timestamp dateCreation;
     private boolean lu;
 
+    public Message() {
+    }
+
+    
+    
     public Long getId() {
         return id;
     }
@@ -36,6 +41,40 @@ public class Message implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public String getTitre() {
+        return titre;
+    }
+
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
+    public String getContenu() {
+        return contenu;
+    }
+
+    public void setContenu(String contenu) {
+        this.contenu = contenu;
+    }
+
+    public Timestamp getDateCreation() {
+        return dateCreation;
+    }
+
+    public void setDateCreation(Timestamp dateCreation) {
+        this.dateCreation = dateCreation;
+    }
+
+    public boolean isLu() {
+        return lu;
+    }
+
+    public void setLu(boolean lu) {
+        this.lu = lu;
+    }
+    
+    
 
     @Override
     public int hashCode() {

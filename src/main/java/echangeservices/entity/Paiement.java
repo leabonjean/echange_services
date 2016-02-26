@@ -27,6 +27,11 @@ public class Paiement implements Serializable {
     private int montant;
     private Timestamp dateCreation;
 
+    public Paiement() {
+    }
+
+    
+    
     public Long getId() {
         return id;
     }
@@ -34,6 +39,24 @@ public class Paiement implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public int getMontant() {
+        return montant;
+    }
+
+    public void setMontant(int montant) {
+        this.montant = montant;
+    }
+
+    public Timestamp getDateCreation() {
+        return dateCreation;
+    }
+
+    public void setDateCreation(Timestamp dateCreation) {
+        this.dateCreation = dateCreation;
+    }
+    
+    
 
     @Override
     public int hashCode() {

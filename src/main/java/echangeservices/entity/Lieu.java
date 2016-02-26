@@ -25,6 +25,11 @@ public class Lieu implements Serializable {
     
     private Long nom;
 
+    public Lieu() {
+    }
+
+    
+    
     public Long getId() {
         return id;
     }
@@ -33,6 +38,16 @@ public class Lieu implements Serializable {
         this.id = id;
     }
 
+    public Long getNom() {
+        return nom;
+    }
+
+    public void setNom(Long nom) {
+        this.nom = nom;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 0;

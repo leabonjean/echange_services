@@ -31,6 +31,9 @@ public class Annonce implements Serializable {
     private Timestamp dateCreation;
     private TypeAnnonce typeAnnonce;
 
+    public Annonce() {
+    }
+    
     public Long getId() {
         return id;
     }
@@ -38,6 +41,48 @@ public class Annonce implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public String getTitre() {
+        return titre;
+    }
+
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
+    public String getContenu() {
+        return contenu;
+    }
+
+    public void setContenu(String contenu) {
+        this.contenu = contenu;
+    }
+
+    public int getPrix() {
+        return prix;
+    }
+
+    public void setPrix(int prix) {
+        this.prix = prix;
+    }
+
+    public Timestamp getDateCreation() {
+        return dateCreation;
+    }
+
+    public void setDateCreation(Timestamp dateCreation) {
+        this.dateCreation = dateCreation;
+    }
+
+    public TypeAnnonce getTypeAnnonce() {
+        return typeAnnonce;
+    }
+
+    public void setTypeAnnonce(TypeAnnonce typeAnnonce) {
+        this.typeAnnonce = typeAnnonce;
+    }
+    
+    
 
     @Override
     public int hashCode() {

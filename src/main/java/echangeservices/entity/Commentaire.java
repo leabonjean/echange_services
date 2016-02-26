@@ -28,6 +28,12 @@ public class Commentaire implements Serializable {
     private int note;
     private Timestamp dateCreation;
 
+    public Commentaire() {
+    }
+
+    
+    
+    
     public Long getId() {
         return id;
     }
@@ -35,6 +41,32 @@ public class Commentaire implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public String getContenu() {
+        return contenu;
+    }
+
+    public void setContenu(String contenu) {
+        this.contenu = contenu;
+    }
+
+    public int getNote() {
+        return note;
+    }
+
+    public void setNote(int note) {
+        this.note = note;
+    }
+
+    public Timestamp getDateCreation() {
+        return dateCreation;
+    }
+
+    public void setDateCreation(Timestamp dateCreation) {
+        this.dateCreation = dateCreation;
+    }
+    
+    
 
     @Override
     public int hashCode() {

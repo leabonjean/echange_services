@@ -31,6 +31,11 @@ public class Utilisateur implements Serializable {
     private int solde;
     private TypeUtilisateur TypeUtil;
 
+    public Utilisateur() {
+    }
+
+    
+    
     public Long getId() {
         return id;
     }
@@ -39,6 +44,40 @@ public class Utilisateur implements Serializable {
         this.id = id;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getMdp() {
+        return mdp;
+    }
+
+    public void setMdp(String mdp) {
+        this.mdp = mdp;
+    }
+
+    public int getSolde() {
+        return solde;
+    }
+
+    public void setSolde(int solde) {
+        this.solde = solde;
+    }
+
+    public TypeUtilisateur getTypeUtil() {
+        return TypeUtil;
+    }
+
+    public void setTypeUtil(TypeUtilisateur TypeUtil) {
+        this.TypeUtil = TypeUtil;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 0;

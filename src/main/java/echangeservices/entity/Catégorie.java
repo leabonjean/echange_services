@@ -25,6 +25,11 @@ public class Catégorie implements Serializable {
     
     private Long nom;
 
+    public Catégorie() {
+    }
+
+    
+    
     public Long getId() {
         return id;
     }
@@ -32,6 +37,16 @@ public class Catégorie implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public Long getNom() {
+        return nom;
+    }
+
+    public void setNom(Long nom) {
+        this.nom = nom;
+    }
+    
+    
 
     @Override
     public int hashCode() {
