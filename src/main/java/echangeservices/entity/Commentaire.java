@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -23,17 +25,22 @@ public class Commentaire implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
+
     private String contenu;
     private int note;
     private Timestamp dateCreation;
 
+    @ManyToOne
+    @JoinColumn(name = "UTIL_ID")
+    private Utilisateur CreateurCommentaire;
+    
+    @ManyToOne
+    @JoinColumn(name = "ANNONCE_ID")
+    private Commentaire CommentaireAnnonce;
+
     public Commentaire() {
     }
 
-    
-    
-    
     public Long getId() {
         return id;
     }
@@ -65,8 +72,6 @@ public class Commentaire implements Serializable {
     public void setDateCreation(Timestamp dateCreation) {
         this.dateCreation = dateCreation;
     }
-    
-    
 
     @Override
     public int hashCode() {
@@ -92,5 +97,5 @@ public class Commentaire implements Serializable {
     public String toString() {
         return "echangeservices.entity.Commentaire[ id=" + id + " ]";
     }
-    
+
 }

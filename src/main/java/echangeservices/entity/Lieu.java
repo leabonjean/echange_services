@@ -6,10 +6,13 @@
 package echangeservices.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -24,6 +27,9 @@ public class Lieu implements Serializable {
     private Long id;
     
     private Long nom;
+    
+    @OneToMany(mappedBy = "LieuUtilisateur")
+    private List<Utilisateur> LieuDesUtilisateurs = new ArrayList<Utilisateur>();
 
     public Lieu() {
     }

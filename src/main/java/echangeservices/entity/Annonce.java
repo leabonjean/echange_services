@@ -8,10 +8,15 @@ package echangeservices.entity;
 import echangeservices.enumeration.TypeAnnonce;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -30,6 +35,17 @@ public class Annonce implements Serializable {
     private int prix;
     private Timestamp dateCreation;
     private TypeAnnonce typeAnnonce;
+    
+    @ManyToOne
+    @JoinColumn(name = "UTIL_ID")
+    private Utilisateur CreateurAnnonce;
+    
+    @ManyToOne
+    @JoinColumn(name = "CATEGORIE_ID")
+    private Catégorie CatégorieAnnonce;
+    
+    @OneToMany(mappedBy = "CommentaireAnnonce")
+    private List<Commentaire> CommentairesAnnonce = new ArrayList<Commentaire>();
 
     public Annonce() {
     }

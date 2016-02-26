@@ -7,11 +7,18 @@ package echangeservices.entity;
 
 import echangeservices.enumeration.TypeUtilisateur;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 
 /**
  *
@@ -24,18 +31,38 @@ public class Utilisateur implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
+
     @Column(unique = true)
     private String email;
     private String mdp;
     private int solde;
     private TypeUtilisateur TypeUtil;
 
+    @OneToMany(mappedBy = "CreateurCommentaire")
+    private List<Commentaire> CommentairesPostés = new ArrayList<Commentaire>();
+
+    @OneToMany(mappedBy = "CreateurAnnonce")
+    private List<Annonce> AnnoncesPostées = new ArrayList<Annonce>();
+
+    @ManyToOne
+    @JoinColumn(name = "LIEU_ID")
+    private Lieu LieuUtilisateur;
+
+    @OneToMany(mappedBy = "destinataire")
+    private List<Message> messageReçu = new ArrayList<Message>();
+
+    @OneToMany(mappedBy = "emetteur")
+    private List<Message> messageEnvoyé = new ArrayList<Message>();
+
+    @OneToMany(mappedBy = "crediteur")
+    private List<Paiement> paiementReçu = new ArrayList<Paiement>();
+
+    @OneToMany(mappedBy = "debiteur")
+    private List<Paiement> paiementEnvoyé = new ArrayList<Paiement>();
+
     public Utilisateur() {
     }
 
-    
-    
     public Long getId() {
         return id;
     }
@@ -76,8 +103,6 @@ public class Utilisateur implements Serializable {
         this.TypeUtil = TypeUtil;
     }
 
-    
-    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -102,5 +127,5 @@ public class Utilisateur implements Serializable {
     public String toString() {
         return "echangeservices.entity.Utilisateur[ id=" + id + " ]";
     }
-    
+
 }

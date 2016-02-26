@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -28,6 +30,14 @@ public class Message implements Serializable {
     private String contenu;
     private Timestamp dateCreation;
     private boolean lu;
+    
+    @ManyToOne
+    @JoinColumn(name="UTIL_ID_DESTINATAIRE")
+    private Utilisateur destinataire;
+    
+    @ManyToOne
+    @JoinColumn(name = "UTIL_ID_EMETTEUR")
+    private Utilisateur emetteur;
 
     public Message() {
     }

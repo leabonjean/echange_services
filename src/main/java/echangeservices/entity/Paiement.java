@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -23,15 +25,21 @@ public class Paiement implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
+
     private int montant;
     private Timestamp dateCreation;
+
+    @ManyToOne
+    @JoinColumn(name = "UTIL_ID_CREDITEUR")
+    private Utilisateur crediteur;
+
+    @ManyToOne
+    @JoinColumn(name = "UTIL_ID_DEBITEUR")
+    private Utilisateur debiteur;
 
     public Paiement() {
     }
 
-    
-    
     public Long getId() {
         return id;
     }
@@ -55,8 +63,6 @@ public class Paiement implements Serializable {
     public void setDateCreation(Timestamp dateCreation) {
         this.dateCreation = dateCreation;
     }
-    
-    
 
     @Override
     public int hashCode() {
@@ -82,5 +88,5 @@ public class Paiement implements Serializable {
     public String toString() {
         return "echangeservices.entity.Paiement[ id=" + id + " ]";
     }
-    
+
 }
