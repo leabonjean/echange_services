@@ -5,7 +5,9 @@
  */
 package echangeservices.entity;
 
+import echangeservices.enumeration.TypeUtilisateur;
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,6 +24,12 @@ public class Utilisateur implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
+    @Column(unique = true)
+    private String email;
+    private String mdp;
+    private int solde;
+    private TypeUtilisateur TypeUtil;
 
     public Long getId() {
         return id;

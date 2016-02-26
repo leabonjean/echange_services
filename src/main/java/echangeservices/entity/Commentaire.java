@@ -6,6 +6,7 @@
 package echangeservices.entity;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,6 +23,10 @@ public class Commentaire implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
+    private String contenu;
+    private int note;
+    private Timestamp dateCreation;
 
     public Long getId() {
         return id;

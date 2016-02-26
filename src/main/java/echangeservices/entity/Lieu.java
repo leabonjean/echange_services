@@ -22,6 +22,8 @@ public class Lieu implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
+    private Long nom;
 
     public Long getId() {
         return id;
