@@ -36,7 +36,7 @@ public class Commentaire implements Serializable {
     
     @ManyToOne
     @JoinColumn(name = "ANNONCE_ID")
-    private Commentaire CommentaireAnnonce;
+    private Annonce CommentaireAnnonce;
 
     public Commentaire() {
     }
