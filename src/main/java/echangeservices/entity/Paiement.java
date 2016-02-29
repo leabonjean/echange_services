@@ -28,6 +28,7 @@ public class Paiement implements Serializable {
 
     private int montant;
     private Timestamp dateCreation;
+    private String commentaire;
 
     @ManyToOne
     @JoinColumn(name = "UTIL_ID_CREDITEUR")
@@ -62,6 +63,14 @@ public class Paiement implements Serializable {
 
     public void setDateCreation(Timestamp dateCreation) {
         this.dateCreation = dateCreation;
+    }
+
+    public String getCommentaire() {
+        return commentaire;
+    }
+
+    public void setCommentaire(String commentaire) {
+        this.commentaire = commentaire;
     }
 
     @Override
