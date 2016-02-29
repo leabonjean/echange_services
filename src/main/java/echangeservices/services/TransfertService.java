@@ -14,39 +14,37 @@ import org.springframework.stereotype.Service;
 /**
  *
  * @author admin
- */
+ */  
 @Service
 public class TransfertService {
-    
+
     @Autowired
     private UtilisateurService us;
     @Autowired
     private PaiementService ps;
-    
+
     @PersistenceContext
     private EntityManager em;
-  
-    public void transfert(long crediteurID, long debiteurID, Integer montant, String message){
-//        Paiement p = new Paiement();
-//        
-//        p.setCrediteur(us.findOne(crediteurID));
-//        p.setDebiteur(us.findOne(debiteurID));
-//        p.setMontant(montant);
-//        p.setCommentaire(message);
-//        Integer solde1 = us.findOne(crediteurID).getSolde();
-//        Integer solde2 = us.findOne(debiteurID).getSolde();
-//        if(solde2 - 200 < montant){
-//            System.out.print("Solde insuffisant");
-//            return;
-//        }
-//        us.findOne(crediteurID).setSolde(solde1 + montant);
-//        us.findOne(debiteurID).setSolde(solde2 - montant);
-//        
-//        us.save(us.findOne(crediteurID));
-//        us.save(us.findOne(debiteurID));
-//        ps.save(p);
-//        
-//        
+
+    public void transfert(long crediteurID, long debiteurID, Integer montant, String message) {
+        Paiement p = new Paiement();
+
+        p.setCrediteur(us.findOne(crediteurID));
+        p.setDebiteur(us.findOne(debiteurID));
+        p.setMontant(montant);
+        p.setCommentaire(message);
+        Integer solde1 = us.findOne(crediteurID).getSolde();
+        Integer solde2 = us.findOne(debiteurID).getSolde();
+        if (solde2 - 200 < montant) {
+            System.out.print("Solde insuffisant");
+            return;
+        }
+        us.findOne(crediteurID).setSolde(solde1 + montant);
+        us.findOne(debiteurID).setSolde(solde2 - montant);
+
+        us.save(us.findOne(crediteurID));
+        us.save(us.findOne(debiteurID));
+        ps.save(p);
 
     }
 }
