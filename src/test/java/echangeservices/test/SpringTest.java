@@ -10,6 +10,7 @@ import echangeservices.entity.Categorie;
 import echangeservices.entity.Utilisateur;
 import echangeservices.enumeration.TypeAnnonce;
 import echangeservices.enumeration.TypeUtilisateur;
+import echangeservices.exception.ExceptionSoldeInsuffisant;
 import echangeservices.services.AnnonceService;
 import echangeservices.services.CategorieService;
 import echangeservices.services.CommentaireService;
@@ -146,14 +147,14 @@ public class SpringTest {
         
     }
 
-//    @Test
-    public void doNadaOK() {
+    @Test
+    public void doNadaOK() throws ExceptionSoldeInsuffisant {
 
-        ts.transfert(1L, 2L, 300, "coucou");
+        ts.transfert(1L, 2L, 100, "coucou");
         
     }
     
-    @Test
+//    @Test
     public void testliste(){
         
         System.out.println(as.findBytypeAnnonceAndTitre(TypeAnnonce.DEMANDE, "Chat"));

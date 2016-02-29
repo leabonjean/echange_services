@@ -7,6 +7,7 @@ package echangeservices.services;
 
 import echangeservices.entity.Paiement;
 import echangeservices.entity.Utilisateur;
+import echangeservices.exception.ExceptionSoldeInsuffisant;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,7 @@ public class TransfertService {
     @PersistenceContext
     private EntityManager em;
 
-    public void transfert(long crediteurID, long debiteurID, Integer montant, String message) {
+    public void transfert(long crediteurID, long debiteurID, Integer montant, String message) throws ExceptionSoldeInsuffisant {
         Paiement p = new Paiement();
         Utilisateur u1 = us.findOne(crediteurID);
         Utilisateur u2 = us.findOne(debiteurID);
@@ -42,7 +43,7 @@ public class TransfertService {
         Integer solde2 = us.findOne(debiteurID).getSolde();
         if (solde2 + 200 < montant) {
             System.out.print("Solde insuffisant");
-            return;
+            throw new ExceptionSoldeInsuffisant();
         }
         u1.setSolde(solde1+montant);
         u2.setSolde(solde2 - montant);
