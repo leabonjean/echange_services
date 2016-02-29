@@ -32,16 +32,18 @@ public class TransfertService {
         Utilisateur u1 = us.findOne(crediteurID);
         Utilisateur u2 = us.findOne(debiteurID);
         
-        p.setCrediteur(us.findOne(crediteurID));
-        p.setDebiteur(us.findOne(debiteurID));
+        p.setCrediteur(u1);
+        p.setDebiteur(u2);
         p.setMontant(montant);
         p.setCommentaire(message);
+        u1.getPaiementEnvoyé().add(p);
+        u2.getPaiementReçu().add(p);
         Integer solde1 = us.findOne(crediteurID).getSolde();
         Integer solde2 = us.findOne(debiteurID).getSolde();
-//        if (solde2 - 200 < montant) {
-//            System.out.print("Solde insuffisant");
-//            return;
-//        }
+        if (solde2 + 200 < montant) {
+            System.out.print("Solde insuffisant");
+            return;
+        }
         u1.setSolde(solde1+montant);
         u2.setSolde(solde2 - montant);
 

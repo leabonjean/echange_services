@@ -64,21 +64,21 @@ public class SpringTest {
         u1.setId(2L);
         u1.setMdp("gergre");
         u1.setTypeUtil(TypeUtilisateur.NORMAL);
-        u1.setSolde(150);
+        u1.setSolde(0);
         us.save(u1);
 
         ems.envoieMessage(1L, 2L, "ffezfezfe", "fezfze", new Date());
         
     }
 
-//    @Test
+    @Test
     public void doNadaOK() {
 
-        ts.transfert(1L, 2L, 200, "coucou");
+        ts.transfert(1L, 2L, 300, "coucou");
         
     }
     
-    @Test
+//    @Test
     public void envoieMessage1(){
         
         ems.lectureMessage(1L);
