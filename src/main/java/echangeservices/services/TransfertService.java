@@ -27,6 +27,9 @@ public class TransfertService {
 
     @PersistenceContext
     private EntityManager em;
+    
+    @Autowired
+    private ConfigService configService;
 
     public void transfert(long crediteurID, long debiteurID, Integer montant, String message) throws ExceptionSoldeInsuffisant {
         Paiement p = new Paiement();
@@ -41,7 +44,7 @@ public class TransfertService {
         u2.getPaiementReçu().add(p);
         Integer solde1 = us.findOne(crediteurID).getSolde();
         Integer solde2 = us.findOne(debiteurID).getSolde();
-        if (solde2 + 200 < montant) {
+        if (solde2 + configService.getDecouvertMax() < montant) {
             System.out.print("Solde insuffisant");
             throw new ExceptionSoldeInsuffisant();
         }
