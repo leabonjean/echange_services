@@ -6,13 +6,15 @@
 package echangeservices.entity;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -28,7 +30,9 @@ public class Message implements Serializable {
     
     private String titre;
     private String contenu;
-    private Timestamp dateCreation;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dateCreation;
     private boolean lu;
     
     @ManyToOne
@@ -84,11 +88,11 @@ public class Message implements Serializable {
         this.contenu = contenu;
     }
 
-    public Timestamp getDateCreation() {
+    public Date getDateCreation() {
         return dateCreation;
     }
 
-    public void setDateCreation(Timestamp dateCreation) {
+    public void setDateCreation(Date dateCreation) {
         this.dateCreation = dateCreation;
     }
 

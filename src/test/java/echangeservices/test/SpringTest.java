@@ -8,11 +8,15 @@ package echangeservices.test;
 import echangeservices.entity.Utilisateur;
 import echangeservices.enumeration.TypeUtilisateur;
 import echangeservices.services.DataBaseService;
+import echangeservices.services.EnvoiMessageService;
+import echangeservices.services.MessageService;
 import echangeservices.services.TransfertService;
 import echangeservices.services.UtilisateurService;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import echangeservices.spring.SpringConfig;
+import java.sql.Timestamp;
+import java.util.Date;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -33,6 +37,9 @@ public class SpringTest {
 
     @Autowired
     TransfertService ts;
+    
+    @Autowired
+    EnvoiMessageService ems;
     
     @PersistenceContext
     private EntityManager em;
@@ -60,13 +67,22 @@ public class SpringTest {
         u1.setSolde(150);
         us.save(u1);
 
+        ems.envoieMessage(1L, 2L, "ffezfezfe", "fezfze", new Date());
+        
     }
 
-    @Test
+//    @Test
     public void doNadaOK() {
 
         ts.transfert(1L, 2L, 200, "coucou");
         
     }
+    
+    @Test
+    public void envoieMessage1(){
+        
+        ems.lectureMessage(1L);
+    }
 
+    
 }
