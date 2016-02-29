@@ -6,7 +6,6 @@
 package echangeservices.services;
 
 import echangeservices.entity.Paiement;
-import echangeservices.entity.Utilisateur;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 

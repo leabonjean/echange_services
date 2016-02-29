@@ -42,6 +42,22 @@ public class Message implements Serializable {
     public Message() {
     }
 
+    public Utilisateur getDestinataire() {
+        return destinataire;
+    }
+
+    public void setDestinataire(Utilisateur destinataire) {
+        this.destinataire = destinataire;
+    }
+
+    public Utilisateur getEmetteur() {
+        return emetteur;
+    }
+
+    public void setEmetteur(Utilisateur emetteur) {
+        this.emetteur = emetteur;
+    }
+
     
     
     public Long getId() {
