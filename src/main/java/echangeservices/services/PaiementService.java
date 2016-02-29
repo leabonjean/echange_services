@@ -6,9 +6,7 @@
 package echangeservices.services;
 
 import echangeservices.entity.Paiement;
-import java.io.Serializable;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Component;
 
 /**
  *
