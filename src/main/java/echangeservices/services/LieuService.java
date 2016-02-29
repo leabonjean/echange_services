@@ -7,6 +7,7 @@ package echangeservices.services;
 
 import echangeservices.entity.Lieu;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Component;
 
 /**
  *

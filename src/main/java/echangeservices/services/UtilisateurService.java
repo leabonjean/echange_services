@@ -6,7 +6,6 @@
 package echangeservices.services;
 
 import echangeservices.entity.Utilisateur;
-import java.io.Serializable;
 import org.springframework.data.repository.CrudRepository;
 
 /**
