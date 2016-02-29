@@ -13,8 +13,9 @@ import org.springframework.stereotype.Service;
  * @author admin
  */
 @Service
-public class PaiementServiceImpl implements PaiementService{
+public class PaiementServiceImpl implements PaiementService {
 
+    
     @Override
     public <S extends Paiement> S save(S s) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -69,5 +70,5 @@ public class PaiementServiceImpl implements PaiementService{
     public void deleteAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

@@ -63,6 +63,64 @@ public class Utilisateur implements Serializable {
     public Utilisateur() {
     }
 
+    public List<Commentaire> getCommentairesPostés() {
+        return CommentairesPostés;
+    }
+
+    public void setCommentairesPostés(List<Commentaire> CommentairesPostés) {
+        this.CommentairesPostés = CommentairesPostés;
+    }
+
+    public List<Annonce> getAnnoncesPostées() {
+        return AnnoncesPostées;
+    }
+
+    public void setAnnoncesPostées(List<Annonce> AnnoncesPostées) {
+        this.AnnoncesPostées = AnnoncesPostées;
+    }
+
+    public Lieu getLieuUtilisateur() {
+        return LieuUtilisateur;
+    }
+
+    public void setLieuUtilisateur(Lieu LieuUtilisateur) {
+        this.LieuUtilisateur = LieuUtilisateur;
+    }
+
+    public List<Message> getMessageReçu() {
+        return messageReçu;
+    }
+
+    public void setMessageReçu(List<Message> messageReçu) {
+        this.messageReçu = messageReçu;
+    }
+
+    public List<Message> getMessageEnvoyé() {
+        return messageEnvoyé;
+    }
+
+    public void setMessageEnvoyé(List<Message> messageEnvoyé) {
+        this.messageEnvoyé = messageEnvoyé;
+    }
+
+    public List<Paiement> getPaiementReçu() {
+        return paiementReçu;
+    }
+
+    public void setPaiementReçu(List<Paiement> paiementReçu) {
+        this.paiementReçu = paiementReçu;
+    }
+
+    public List<Paiement> getPaiementEnvoyé() {
+        return paiementEnvoyé;
+    }
+
+    public void setPaiementEnvoyé(List<Paiement> paiementEnvoyé) {
+        this.paiementEnvoyé = paiementEnvoyé;
+    }
+
+    
+    
     public Long getId() {
         return id;
     }

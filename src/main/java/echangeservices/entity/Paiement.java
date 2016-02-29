@@ -38,6 +38,24 @@ public class Paiement implements Serializable {
     @JoinColumn(name = "UTIL_ID_DEBITEUR")
     private Utilisateur debiteur;
 
+    public Utilisateur getCrediteur() {
+        return crediteur;
+    }
+
+    public void setCrediteur(Utilisateur crediteur) {
+        this.crediteur = crediteur;
+    }
+
+    public Utilisateur getDebiteur() {
+        return debiteur;
+    }
+
+    public void setDebiteur(Utilisateur debiteur) {
+        this.debiteur = debiteur;
+    }
+
+    
+    
     public Paiement() {
     }
 
