@@ -6,13 +6,11 @@
 package echangeservices.services;
 
 import echangeservices.entity.Message;
-import org.springframework.stereotype.Service;
 
 /**
  *
  * @author admin
  */
-@Service
 public class MessageServiceImpl implements MessageService{
 
     @Override
