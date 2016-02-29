@@ -19,7 +19,7 @@ import javax.persistence.OneToMany;
  * @author admin
  */
 @Entity
-public class Catégorie implements Serializable {
+public class Categorie implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -31,7 +31,7 @@ public class Catégorie implements Serializable {
     @OneToMany(mappedBy = "CatégorieAnnonce")
     private List<Annonce> AnnoncesDeCatégorie = new ArrayList<Annonce>();
 
-    public Catégorie() {
+    public Categorie() {
     }
 
     
@@ -64,10 +64,10 @@ public class Catégorie implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Catégorie)) {
+        if (!(object instanceof Categorie)) {
             return false;
         }
-        Catégorie other = (Catégorie) object;
+        Categorie other = (Categorie) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

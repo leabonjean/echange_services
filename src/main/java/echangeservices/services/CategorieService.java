@@ -5,7 +5,7 @@
  */
 package echangeservices.services;
 
-import echangeservices.entity.Catégorie;
+import echangeservices.entity.Categorie;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Component;
  *
  * @author admin
  */
-public interface CategorieService extends CrudRepository<Catégorie, Long>{
+public interface CategorieService extends CrudRepository<Categorie, Long>{
     
 }

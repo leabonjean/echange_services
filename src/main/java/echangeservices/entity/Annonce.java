@@ -42,7 +42,7 @@ public class Annonce implements Serializable {
     
     @ManyToOne
     @JoinColumn(name = "CATEGORIE_ID")
-    private Catégorie CatégorieAnnonce;
+    private Categorie CatégorieAnnonce;
     
     @OneToMany(mappedBy = "CommentaireAnnonce")
     private List<Commentaire> CommentairesAnnonce = new ArrayList<Commentaire>();
