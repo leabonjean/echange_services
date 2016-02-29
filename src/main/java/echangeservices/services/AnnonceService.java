@@ -21,13 +21,13 @@ import org.springframework.stereotype.Component;
  */
 public interface AnnonceService extends CrudRepository<Annonce, Long>{
 //    
-//        public List<Annonce> findByCategorieId(long id);
-//        public List<Annonce> findByTitre(String s);
-//        public List<Annonce> findByTitreAndContenu(String s ,String p);
-//        public List<Annonce> findBytypeAnnonce(TypeAnnonce Type);
-//        public List<Annonce> findByUtilisateurId(long id);
+        public List<Annonce> findByCategorieAnnonceId(long id);
+        public List<Annonce> findByTitre(String s);
+        public List<Annonce> findByTitreAndContenu(String s ,String p);
+        public List<Annonce> findBytypeAnnonce(TypeAnnonce Type);
+        public List<Annonce> findByCreateurAnnonceId(Long id);
 //        public List<Annonce> findBydateCreationOrderByAsc(Timestamp date);
-//        public List<Annonce> findBytypeAnnonceAndCategorieId(TypeAnnonce type,Categorie cat);
-//        public List<Annonce> findBytypeAnnonceAndTitre(TypeAnnonce type , String s);
+        public List<Annonce> findBytypeAnnonceAndCategorieAnnonceId(TypeAnnonce type,long id);
+        public List<Annonce> findBytypeAnnonceAndTitre(TypeAnnonce type , String s);
         
 }

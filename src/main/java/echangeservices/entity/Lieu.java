@@ -28,8 +28,8 @@ public class Lieu implements Serializable {
     
     private Long nom;
     
-    @OneToMany(mappedBy = "LieuUtilisateur")
-    private List<Utilisateur> LieuDesUtilisateurs = new ArrayList<Utilisateur>();
+    @OneToMany(mappedBy = "lieuUtilisateur")
+    private List<Utilisateur> lieuDesUtilisateurs = new ArrayList<Utilisateur>();
 
     public Lieu() {
     }

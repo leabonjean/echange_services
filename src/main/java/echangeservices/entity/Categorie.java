@@ -26,12 +26,20 @@ public class Categorie implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    private Long nom;
+    private String nom;
     
-    @OneToMany(mappedBy = "CatégorieAnnonce")
-    private List<Annonce> AnnoncesDeCatégorie = new ArrayList<Annonce>();
+    @OneToMany(mappedBy = "categorieAnnonce")
+    private List<Annonce> annoncesDeCategorie = new ArrayList<Annonce>();
 
     public Categorie() {
+    }
+
+    public List<Annonce> getAnnoncesDeCategorie() {
+        return annoncesDeCategorie;
+    }
+
+    public void setAnnoncesDeCategorie(List<Annonce> AnnoncesDeCategorie) {
+        this.annoncesDeCategorie = AnnoncesDeCategorie;
     }
 
     
@@ -44,11 +52,11 @@ public class Categorie implements Serializable {
         this.id = id;
     }
 
-    public Long getNom() {
+    public String getNom() {
         return nom;
     }
 
-    public void setNom(Long nom) {
+    public void setNom(String nom) {
         this.nom = nom;
     }
     

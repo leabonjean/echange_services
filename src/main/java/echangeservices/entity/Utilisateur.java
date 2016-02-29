@@ -36,17 +36,17 @@ public class Utilisateur implements Serializable {
     private String email;
     private String mdp;
     private int solde;
-    private TypeUtilisateur TypeUtil;
+    private TypeUtilisateur typeUtil;
 
-    @OneToMany(mappedBy = "CreateurCommentaire")
-    private List<Commentaire> CommentairesPostés = new ArrayList<Commentaire>();
+    @OneToMany(mappedBy = "createurCommentaire")
+    private List<Commentaire> commentairesPostés = new ArrayList<Commentaire>();
 
-    @OneToMany(mappedBy = "CreateurAnnonce")
-    private List<Annonce> AnnoncesPostées = new ArrayList<Annonce>();
+    @OneToMany(mappedBy = "createurAnnonce")
+    private List<Annonce> annoncesPostees = new ArrayList<Annonce>();
 
     @ManyToOne
     @JoinColumn(name = "LIEU_ID")
-    private Lieu LieuUtilisateur;
+    private Lieu lieuUtilisateur;
 
     @OneToMany(mappedBy = "destinataire")
     private List<Message> messageReçu = new ArrayList<Message>();
@@ -63,28 +63,30 @@ public class Utilisateur implements Serializable {
     public Utilisateur() {
     }
 
+    
+    
     public List<Commentaire> getCommentairesPostés() {
-        return CommentairesPostés;
+        return commentairesPostés;
     }
 
     public void setCommentairesPostés(List<Commentaire> CommentairesPostés) {
-        this.CommentairesPostés = CommentairesPostés;
+        this.commentairesPostés = CommentairesPostés;
     }
 
     public List<Annonce> getAnnoncesPostées() {
-        return AnnoncesPostées;
+        return annoncesPostees;
     }
 
     public void setAnnoncesPostées(List<Annonce> AnnoncesPostées) {
-        this.AnnoncesPostées = AnnoncesPostées;
+        this.annoncesPostees = AnnoncesPostées;
     }
 
     public Lieu getLieuUtilisateur() {
-        return LieuUtilisateur;
+        return lieuUtilisateur;
     }
 
     public void setLieuUtilisateur(Lieu LieuUtilisateur) {
-        this.LieuUtilisateur = LieuUtilisateur;
+        this.lieuUtilisateur = LieuUtilisateur;
     }
 
     public List<Message> getMessageReçu() {
@@ -154,11 +156,11 @@ public class Utilisateur implements Serializable {
     }
 
     public TypeUtilisateur getTypeUtil() {
-        return TypeUtil;
+        return typeUtil;
     }
 
     public void setTypeUtil(TypeUtilisateur TypeUtil) {
-        this.TypeUtil = TypeUtil;
+        this.typeUtil = TypeUtil;
     }
 
     @Override

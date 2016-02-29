@@ -42,17 +42,43 @@ public class Annonce implements Serializable {
     
     @ManyToOne
     @JoinColumn(name = "UTIL_ID")
-    private Utilisateur CreateurAnnonce;
+    private Utilisateur createurAnnonce;
     
     @ManyToOne
     @JoinColumn(name = "CATEGORIE_ID")
-    private Categorie CatégorieAnnonce;
+    private Categorie categorieAnnonce;
     
-    @OneToMany(mappedBy = "CommentaireAnnonce")
-    private List<Commentaire> CommentairesAnnonce = new ArrayList<Commentaire>();
+    @OneToMany(mappedBy = "commentaireAnnonce")
+    private List<Commentaire> commentairesAnnonce = new ArrayList<Commentaire>();
 
     public Annonce() {
     }
+
+    public Utilisateur getCreateurAnnonce() {
+        return createurAnnonce;
+    }
+
+    public void setCreateurAnnonce(Utilisateur CreateurAnnonce) {
+        this.createurAnnonce = CreateurAnnonce;
+    }
+
+    public Categorie getCategorieAnnonce() {
+        return categorieAnnonce;
+    }
+
+    public void setCategorieAnnonce(Categorie CategorieAnnonce) {
+        this.categorieAnnonce = CategorieAnnonce;
+    }
+
+    public List<Commentaire> getCommentairesAnnonce() {
+        return commentairesAnnonce;
+    }
+
+    public void setCommentairesAnnonce(List<Commentaire> CommentairesAnnonce) {
+        this.commentairesAnnonce = CommentairesAnnonce;
+    }
+    
+    
     
     public Long getId() {
         return id;
