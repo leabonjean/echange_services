@@ -5,14 +5,13 @@
  */
 package echangeservices.services;
 
-import echangeservices.entity.Annonce;
-import java.io.Serializable;
+import echangeservices.entity.Catégorie;
 import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author admin
  */
-public interface AnnonceService extends CrudRepository<Annonce, Long>{
+public interface CategorieService extends CrudRepository<Catégorie, Long>{
     
 }
